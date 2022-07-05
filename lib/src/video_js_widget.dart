@@ -55,7 +55,8 @@ class VideoJsWidgetState extends State<VideoJsWidget> {
               ..style.minHeight = "100%"
               ..style.width = "100%"
               ..style.height = "100%"
-              ..className = "video-js vjs-default-skin vjs-big-play-centered",
+              ..className = "video-js vjs-default-skin vjs-big-play-centered"
+              ..setAttribute('playsinline', true),
             html.ScriptElement()
               ..innerHtml = VideoJsScripts().videojsCode(
                   widget.videoJsController.playerId,

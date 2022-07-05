@@ -78,6 +78,17 @@ class VideoJsOptions {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    // data['techOrder'] = ['\'htlm5\''];
+    // data['hls'] = true;
+    data['html5'] = {
+      'vls': {
+        'overrideNative': true,
+        'maxPlaylistRetries': 5,
+      },
+      'nativeVideoTracks': false,
+      'nativeAudioTracks': false,
+      'plugins': {'reloadSourceOnError': {}}
+    };
     if (this.controls != null) data['controls'] = this.controls;
     if (this.loop != null) data['loop'] = this.loop;
     if (this.muted != null) data['muted'] = this.muted;
